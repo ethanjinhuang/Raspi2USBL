@@ -1,0 +1,10 @@
+/build/
+/.vscode/
+/bin/
+/lib/
+# /thirdparty/liquid-dsp/
+/data/*.dat
+/data/*.txt
+*.dat
+*.bin
+*.DS_Store

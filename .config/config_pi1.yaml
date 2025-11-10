@@ -1,0 +1,158 @@
+# Config For RaspiUSBL (Raspberry pi based Passive Inverted Ultar Short Baseline) System
+
+# In file path, ${TIME} will be replaced by the current time
+
+# System Config
+System:
+  # Mode: "MODE_TRANSMIT" or "MODE_RECEIVE"
+  workMode: "MODE_TRANSMIT"
+  # workMode: "MODE_RECEIVE"
+
+# Data IO Config
+DataIO:
+  # Output Serial
+  outputSerialName: "/dev/ttyCH9344USB0"
+  outputSerialBaudrate: 115200
+
+# TCP Info
+TCP:
+  # TCP Server IP
+  # serverIP: "192"
+  serverPort: 8080
+  connectTimeout: 5000
+  sendTimeout: 300
+
+# Array Info
+Array:
+  # Array Type: "LINEAR" or "CIRCLE"
+  # arrayType: "LINEAR"
+  # Array Length (m)
+  # arrayLength: 0.1
+  # Array Element Number
+  elementNumber: 6
+  # Array Radius (m)
+  diameter: 0.13
+  # Initial Receive Gain
+  initReceiveGain: 1
+  # Maximal Power
+  # maxPower: 1
+  # Minimal Power
+  # minPower: 0.1
+
+# Signal Process Config
+SignalProcess:
+  # Reference Signal Frequency (Hz)
+  referenceFrequency: 200000 # for MCC 1808X -> equal to [Signal][sampleRate]
+  # referenceFrequency: 200000 # for loading data
+  # Sound Speed (m/s)
+  soundSpeed: 1500
+  # Process Duration (s)
+  processDuration: 0.02
+  # Process Frequency (Hz)
+  processStartFrequency: 10000
+  processEndFrequency: 12000
+  # DOA Step (degree)
+  doaStep: 0.1
+
+# Adaptive Gain Control Config
+AGC:
+  # AGC Enable
+  enableAGC: false
+  # Serial Port Name
+  serialPortName: "/dev/ttyUSB0"
+  # Serial Port Baudrate
+  serialPortBaudrate: 19200
+  # AGC Init Gain
+  initGain: 1
+  # Min Power value in correlation
+  # minPower: 200
+  minPower: 10 # for test
+  # Max Power value in correlation
+  # maxPower: 1000
+  maxPower: 50  # for test
+  # AGC Min Gain (voltage)
+  minGain: 0
+  # AGC Max Gain (voltage)
+  maxGain: 3.3
+  # AGC Step
+  agcStep: 0.1
+
+
+# File Info
+File:
+  # Config File Saver
+  # Whether to Save the Generated Signal
+  enableGenerateSignalSave: true
+  # Whether to Save the Received Signal
+  enableReceiveSignalSvae: true
+  # Whether to Save the Position Result
+  enablePositionResultSave: true
+  # Whether to Save the Correlation Result
+  enableCorrelationResultSave: true
+  # Whether to Save the TOF Process Result
+  enableTOFResultSave: true
+  # Whether to Save the BeamPattern Result
+  enableBeamPatternResultSave: true
+  # Whether to Save the SideAmpSpec Result
+  enableSideAmpSpecResultSave: true
+
+  # Generate Signal File Save Path
+  generateSignalFileSavePath: "../data/SIG.txt"
+  # Receive Signal File Save Path
+  receiveSignalFileSavePath: "../data/AI_${TIME}.txt"
+  # Position Result File Save Path
+  # positionResultFileSavePath: "../data/POS_${TIME}.txt"
+  positionResultFileSavePath: "../data/POS.txt"
+  # Correlation Result File Save Path
+  correlationFileSavePath: "../data/COR.txt"
+  # TOF Result File Save Path
+  tofResultFileSavePath: "../data/TOF.txt"
+  # BeamPattern Result File Save Path
+  beamPatternResultFileSavePath: "../data/BP.txt"
+  # SideAmpSpec Result File Save Path
+  sideAmpSpecResultFileSavePath: "../data/SAS.txt"
+
+# Transmit Config
+Transmit:
+  # Output Channel
+  lowChannel: 0
+  highChannel: 0
+  # Output Sample Rate (Hz)
+  sampleRate: 500000
+  # System Duration (s)
+  duration: 10000
+
+# Receive Config
+Receive:
+  # Input Channel
+  lowChannel: 0
+  highChannel: 5
+  # Input Sample Rate (num), Number of Each Channel Sample Points
+  samplesPerChannel: 12000 # DAQ MCC USB-1608FS-Plus
+  # samplesPerChannel: 60000
+  # Sample Rate (Hz)
+  sampleRate: 40000 # DAQ MCC USB-1608FS-Plus
+  # sampleRate: 200000 # DAQ MCC 1808X
+  # sampleRate: 200000 # for loading data
+  # System Duration (s)
+  duration: 10000
+  # Receive Signal Interval (s)
+  interval: 1.9
+
+# Signal
+Signal:
+  # Attention: The Sample Rate of Signal Must be Equal to [Transmit][sampleRate]
+  sampleRate: 500000 # transmited signal sample rate
+  # sampleRate: 40000 # received signal sample rate (using for correlation)
+  # Signal Info: signalType, startFreq, endFreq, amplitude, phase, duration
+  # Signal Type: SIG_SIN SIG_COS SIG_RISING SIG_FALLING SIG_CHRIP SIG_ZERO
+  signalInfo:
+    # [ "SIG_CHRIP",10000, 8000, 10, 0, 0.02,
+    #   "SIG_ZERO", 0, 0, 0, 0, 0.23,
+    #   "SIG_CHRIP",8000, 10000, 10, 0, 0.02,
+    #   "SIG_ZERO", 0, 0, 0, 0, 0.23,
+    #   "SIG_CHRIP",10000, 9000, 10, 0, 0.02,
+    #   "SIG_ZERO", 0, 0, 0, 0, 0.23,
+    #   "SIG_CHRIP",9000, 10000, 10, 0, 0.02,
+    #   "SIG_ZERO", 0, 0, 0, 0, 0.1]
+    [ "SIG_CHRIP",10000, 12000, 1, 0, 0.02]

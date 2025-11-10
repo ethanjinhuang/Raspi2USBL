@@ -1,0 +1,55 @@
+# clang-format configuration
+
+# Base
+BasedOnStyle: LLVM
+
+# Indent
+UseTab: Never
+TabWidth: 4
+IndentWidth: 4
+ColumnLimit: 120
+AccessModifierOffset: -4
+ObjCBlockIndentWidth: 4
+IndentWrappedFunctionNames: true
+IndentCaseLabels: true
+
+# Line
+MaxEmptyLinesToKeep: 1
+SpaceBeforeAssignmentOperators: true
+SpacesInContainerLiterals: true
+KeepEmptyLinesAtTheStartOfBlocks: true
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowAllParametersOfDeclarationOnNextLine: true
+BreakConstructorInitializersBeforeComma: true
+
+# Space
+PointerAlignment: Right
+SpacesInSquareBrackets: false
+SpacesInParentheses: false
+SpaceAfterCStyleCast: true
+
+# Alignment
+AlignAfterOpenBracket: Align
+AlignArrayOfStructures: Left
+ObjCSpaceAfterProperty: true
+AlignOperands: true
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: false
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: false
+  AlignCompound: true
+  PadOperators: true
+# AlignConsecutiveDeclarations: None
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+# AlignTrailingComments: true
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 1
