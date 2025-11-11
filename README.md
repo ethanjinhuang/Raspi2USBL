@@ -2,7 +2,7 @@
  * @Author: Jin Huang @ jin.huang@zju.edu.cn
  * @Date: 2024-08-15 17:02:28
  * @LastEditors: Jin's Macbook jin.huang@zju.edu.cn
- * @LastEditTime: 2025-11-10 14:13:12
+ * @LastEditTime: 2025-11-11 11:38:49
  * @FilePath: /Raspi2USBL/README.md
  * @Description: 
  * 
@@ -37,15 +37,28 @@ Key Features:
 - Rypkema, Nicholas Rahardiyan. Underwater & out of sight: Towards ubiquity in underwater robotics. Diss. Massachusetts Institute of Technology, 2019.
 - Rypkema, Nicholas R., Henrik Schmidt, and Erin M. Fischell. "Synchronous-clock range-angle relative acoustic navigation: A unified approach to multi-AUV localization, command, control, and coordination." Field Robotics 2 (2022): 774-806.
 
-### If you use this software for your academic research, please give acknowledgment as follows and cite our related references.
+### If you use this software or datasets for your academic research, please give acknowledgment as follows and cite our related references.
 
 #### Acknowledgment
 
-> The authors would like to acknowledge Mr. Jin Huang and Dr. Yingqiang Wang of Prof. Chen’s group at Zhejiang University for providing the open-source Raspi$^2$USBL software used in this study.
+> The authors would like to acknowledge Mr. Jin Huang and Dr. Yingqiang Wang of Prof. Chen’s group at Zhejiang University for providing the open-source Raspi$^2$USBL software and datasets used in this study.
 
 #### References
 
-> Huang, Jin, Wang Yingqiang, and Chen Ying. Raspi$^2$USBL: An Open-Source Raspberry Pi–Based Passive Inverted Ultra-Short Baseline Positioning System for Marine Robotics. Submitted to IEEE Journal of Oceanic Engineering, 2025.
+```bibtex
+@misc{huangRaspi$^2$USBLOpensourceRaspberry2025,
+  title = {Raspi\$\textasciicircum 2\$USBL: An Open-Source Raspberry Pi-Based Passive Inverted Ultra-Short Baseline Positioning System for Underwater Robotics},
+  author = {Huang, Jin and Wang, Yingqiang and Chen, Ying},
+  year = 2025,
+  number = {arXiv:2511.06998},
+  eprint = {2511.06998},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2511.06998},
+  urldate = {2025-11-11},
+  archiveprefix = {arXiv}
+}
+```
 
 
 
